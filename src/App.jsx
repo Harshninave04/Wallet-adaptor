@@ -1,32 +1,38 @@
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import RequestAirdrop from './components/RequestAirdrop';
+import {
+  WalletDisconnectButton,
+  WalletModalProvider,
+  WalletMultiButton,
+} from '@solana/wallet-adapter-react-ui';
+import { clusterApiUrl } from '@solana/web3.js';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { useMemo } from 'react';
 
 function App() {
-
-  function handleConnect() {
-    const amount = document.getElementById('amount').value;
-    if (!amount) {
-      alert('Please enter an amount');
-      return;
-    }
-
-    // Simulate a wallet connection and airdrop
-    console.log(`Airdropping ${amount} tokens...`);
-    alert(`Airdropped ${amount} tokens successfully!`);
-    }
- 
-
+  const network = WalletAdapterNetwork.Devnet;
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   return (
-    <>
-      <div>
-        <h1>Welcome to Wallet adaptor!</h1>
-        <p>
-          This is a simple wallet adaptor example using React. You can connect
-          your wallet and interact with it.
-        </p>
-        <input id="amount" type="text" placeholder="Amount" />
-        <button onClick={handleConnect}>Airdrop</button>
-      </div>
-    </>
-  )
+    <div>
+      <ConnectionProvider endpoint={endpoint}>
+        <WalletProvider wallets={[]} autoConnect>
+          <WalletModalProvider>
+            <div
+              style={{
+                display: 'flex',
+                maxWidth: '400px',
+              }}>
+              <WalletMultiButton style={{ marginLeft: '16px', height: '40px', width: 'auto' }} />
+              <WalletDisconnectButton
+                style={{ marginLeft: '16px', height: '40px', width: 'auto' }}
+              />
+            </div>
+            <RequestAirdrop />
+          </WalletModalProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;
