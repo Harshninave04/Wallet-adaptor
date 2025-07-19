@@ -8,6 +8,7 @@ import {
 import { clusterApiUrl } from '@solana/web3.js';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { useMemo } from 'react';
+import ShowSolanaBalance from './components/ShowSolanaBalance';
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -28,6 +29,7 @@ function App() {
               />
             </div>
             <RequestAirdrop />
+            <ShowSolanaBalance/>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
