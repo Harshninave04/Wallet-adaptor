@@ -9,6 +9,7 @@ import { clusterApiUrl } from '@solana/web3.js';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { useMemo } from 'react';
 import ShowSolanaBalance from './components/ShowSolanaBalance';
+import SignMessage from './components/SignMessage';
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -28,8 +29,10 @@ function App() {
                 style={{ marginLeft: '16px', height: '40px', width: 'auto' }}
               />
             </div>
+            <ShowSolanaBalance />
             <RequestAirdrop />
-            <ShowSolanaBalance/>
+            <span ><p>Sign Message</p></span>
+            <SignMessage />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

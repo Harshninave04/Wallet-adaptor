@@ -5,6 +5,8 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <div style={{padding: '20px', margin: 'auto', maxWidth: '900px'}}>
+      <App />
+    </div>
   </StrictMode>,
-)
+);

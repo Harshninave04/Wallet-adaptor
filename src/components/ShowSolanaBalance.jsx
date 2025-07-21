@@ -14,7 +14,7 @@ function ShowSolanaBalance() {
   getBalance();
   return (
     <>
-      <p style={{display: 'flex'}}>
+      <p style={{display: 'flex', fontSize: '20px'}}>
         Your Solana balance is: <div id="balance" style={{marginLeft: '4px'}}></div>
       </p>
     </>
