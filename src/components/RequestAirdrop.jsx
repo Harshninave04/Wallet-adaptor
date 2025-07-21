@@ -17,8 +17,17 @@ function RequestAirdrop() {
   }
   return (
     <>
-      <input id="amount" type="text" placeholder="Amount" />
-      <button onClick={requestAirdrop}>Request Airdrop</button>
+      <input
+        id="amount"
+        type="text"
+        placeholder="Amount"
+        style={{ color: 'white', backgroundColor: 'black', padding: '10px', marginRight: '4px' }}
+      />
+      <button
+        onClick={requestAirdrop}
+        style={{ color: 'green', backgroundColor: 'greenyellow', padding: '10px' }}>
+        Request Airdrop
+      </button>
     </>
   );
 }
