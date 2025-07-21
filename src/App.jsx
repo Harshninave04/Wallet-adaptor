@@ -10,6 +10,7 @@ import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { useMemo } from 'react';
 import ShowSolanaBalance from './components/ShowSolanaBalance';
 import SignMessage from './components/SignMessage';
+import SendingSolana from './components/SendingSolana';
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -33,6 +34,8 @@ function App() {
             <RequestAirdrop />
             <span ><p>Sign Message</p></span>
             <SignMessage />
+            <span><p>Send Solana</p></span>
+            <SendingSolana />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
