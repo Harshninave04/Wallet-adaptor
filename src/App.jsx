@@ -16,27 +16,86 @@ import SendingSolana from './components/SendingSolana';
 function App() {
   const network = WalletAdapterNetwork.Devnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+
   return (
-    <div>
+    <div
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
+        padding: '40px 20px',
+      }}>
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
             <div
               style={{
-                display: 'flex',
-                maxWidth: '400px',
+                maxWidth: '800px',
+                margin: '0 auto',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '24px',
+                padding: '40px',
+                backdropFilter: 'blur(20px)',
+                boxShadow: '0 25px 80px rgba(0,0,0,0.15)',
               }}>
-              <WalletMultiButton style={{ marginLeft: '16px', height: '40px', width: 'auto' }} />
-              <WalletDisconnectButton
-                style={{ marginLeft: '16px', height: '40px', width: 'auto' }}
-              />
+              <h1
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontSize: '36px',
+                  fontWeight: '700',
+                  marginBottom: '40px',
+                  marginTop: '0',
+                  letterSpacing: '1px',
+                }}>
+                Solana Wallet
+              </h1>
+
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '16px',
+                  marginBottom: '40px',
+                  flexWrap: 'wrap',
+                }}>
+                <WalletMultiButton
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    borderRadius: '12px',
+                    border: 'none',
+                    padding: '12px 24px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    backdropFilter: 'blur(10px)',
+                  }}
+                />
+                <WalletDisconnectButton
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    borderRadius: '12px',
+                    border: 'none',
+                    padding: '12px 24px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    backdropFilter: 'blur(10px)',
+                  }}
+                />
+              </div>
+
+              <ShowSolanaBalance />
+              <RequestAirdrop />
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                  gap: '24px',
+                  marginTop: '40px',
+                }}>
+                <SignMessage />
+                <SendingSolana />
+              </div>
             </div>
-            <ShowSolanaBalance />
-            <RequestAirdrop />
-            <span ><p>Sign Message</p></span>
-            <SignMessage />
-            <span><p>Send Solana</p></span>
-            <SendingSolana />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
