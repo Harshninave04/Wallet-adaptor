@@ -13,40 +13,49 @@ function ShowSolanaBalance() {
 
   getBalance();
   return (
-    <div
-      style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: '32px',
-        borderRadius: '20px',
-        boxShadow: '0 15px 50px rgba(0,0,0,0.15)',
-        marginBottom: '32px',
-        textAlign: 'center',
-      }}>
-      <h2
+    <div className="w-full relative">
+      <div
         style={{
-          color: 'white',
-          marginBottom: '24px',
-          fontSize: '24px',
-          fontWeight: '700',
-          marginTop: '0',
+          background: '#000000',
+          backgroundImage: `
+        linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)
+      `,
+          backgroundSize: '20px 20px, 20px 20px, 20px 20px',
+          backgroundPosition: '0 0, 0 0, 0 0',
+          padding: '32px',
+          borderRadius: '20px',
+          boxShadow: '0 15px 50px rgba(0,0,0,0.15)',
+          marginBottom: '32px',
+          textAlign: 'center',
         }}>
-        Wallet Balance
-      </h2>
-      <p
-        style={{
-          display: 'flex',
-          fontSize: '32px',
-          color: 'white',
-          fontWeight: '300',
-          justifyContent: 'center',
-          alignItems: 'center',
-          margin: '0',
-          letterSpacing: '1px',
-        }}>
-        <div id="balance" style={{ marginLeft: '8px', fontWeight: '600' }}>
-          0.00 SOL
-        </div>
-      </p>
+        <h2
+          style={{
+            color: 'white',
+            marginBottom: '24px',
+            fontSize: '24px',
+            fontWeight: '700',
+            marginTop: '0',
+          }}>
+          Wallet Balance
+        </h2>
+        <p
+          style={{
+            display: 'flex',
+            fontSize: '32px',
+            color: 'white',
+            fontWeight: '300',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: '0',
+            letterSpacing: '1px',
+          }}>
+          <div id="balance" style={{ marginLeft: '8px', fontWeight: '600' }}>
+            0.00 SOL
+          </div>
+        </p>
+      </div>
     </div>
   );
 }
