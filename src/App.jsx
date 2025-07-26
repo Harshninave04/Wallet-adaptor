@@ -21,7 +21,6 @@ function App() {
     <div
       style={{
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
         padding: '40px 20px',
       }}>
       <ConnectionProvider endpoint={endpoint}>
@@ -29,7 +28,7 @@ function App() {
           <WalletModalProvider>
             <div
               style={{
-                maxWidth: '800px',
+                maxWidth: '80%',
                 margin: '0 auto',
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderRadius: '24px',
