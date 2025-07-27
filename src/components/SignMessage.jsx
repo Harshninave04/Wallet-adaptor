@@ -122,7 +122,7 @@ function SignMessage() {
         {/* Sign Button */}
         <button
           onClick={handleClick}
-          className="group relative w-full py-4 px-6 bg-gradient-to-r from-pink-600 via-red-600 to-orange-600 hover:from-pink-500 hover:via-red-500 hover:to-orange-500 text-white font-bold text-lg rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+          className="group relative w-full py-4 px-6 bg-gradient-to-r from-pink-600 via-red-600 to-orange-600 hover:from-pink-500 hover:via-red-500 hover:to-orange-500 text-white font-bold text-lg rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden mt-3">
           {/* Button background animation */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -148,7 +148,7 @@ function SignMessage() {
         </button>
 
         {/* Security Footer */}
-        <div className="mt-6 pt-9 border-t border-slate-700/50">
+        <div className="mt-6 pt-6 border-t border-slate-700/50">
           <div className="grid grid-cols-2 gap-4 text-xs text-slate-400">
             <div className="flex items-center space-x-2">
               <svg

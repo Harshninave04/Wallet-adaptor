@@ -59,7 +59,7 @@ function App() {
                 }}>
                 <WalletMultiButton
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    // backgroundColor: 'rgba(255,255,255,0.2)',
                     borderRadius: '12px',
                     border: 'none',
                     padding: '12px 24px',
@@ -70,7 +70,7 @@ function App() {
                 />
                 <WalletDisconnectButton
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    // backgroundColor: 'rgba(255,255,255,0.2)',
                     borderRadius: '12px',
                     border: 'none',
                     padding: '12px 24px',
