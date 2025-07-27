@@ -23,84 +23,155 @@ function SendingSolana() {
   };
 
   return (
-    <div
-      style={{
-        background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-        padding: '24px',
-        borderRadius: '16px',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-        marginBottom: '24px',
-      }}>
-      <h3
-        style={{
-          color: 'white',
-          marginBottom: '16px',
-          fontSize: '18px',
-          fontWeight: '600',
-          marginTop: '0',
-        }}>
-        Send Solana
-      </h3>
-      <div style={{ marginBottom: '12px' }}>
-        <input
-          id="to"
-          type="text"
-          placeholder="Recipient Address"
-          style={{
-            width: '100%',
-            padding: '12px 16px',
-            border: 'none',
-            borderRadius: '12px',
-            fontSize: '16px',
-            backgroundColor: 'rgba(255,255,255,0.15)',
-            color: 'white',
-            backdropFilter: 'blur(10px)',
-            outline: 'none',
-            boxSizing: 'border-box',
-          }}
-        />
+    <div className="relative w-full h-full">
+      {/* Glowing background effect */}
+      {/* <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-400 rounded-3xl blur-xl opacity-75 animate-pulse"></div> */}
+
+      <div className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 rounded-xl border border-purple-500/20 backdrop-blur-xl shadow-2xl">
+        {/* Decorative elements */}
+        <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-lg"></div>
+
+        {/* Header */}
+        <div className="relative mb-8 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl mb-4 shadow-lg">
+            <svg
+              className="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+              />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-2">
+            Send Solana
+          </h3>
+          <p className="text-slate-400 text-sm">Transfer SOL to any wallet address</p>
+        </div>
+
+        {/* Form Fields */}
+        <div className="space-y-6 relative">
+          {/* Recipient Address Field */}
+          <div className="group">
+            <label className="block text-sm font-medium text-slate-300 mb-3">
+              Recipient Address
+            </label>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <input
+                id="to"
+                type="text"
+                placeholder="Enter wallet address..."
+                className="relative w-full px-6 py-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl text-white placeholder-slate-400 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm font-mono text-sm"
+              />
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                <svg
+                  className="w-5 h-5 text-slate-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Amount Field */}
+          <div className="group">
+            <label className="block text-sm font-medium text-slate-300 mb-3">Amount (SOL)</label>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <input
+                id="amount"
+                type="text"
+                placeholder="0.00"
+                className="relative w-full px-6 py-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl text-white placeholder-slate-400 focus:border-purple-400/50 focus:ring-2 focus:ring-purple-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm text-lg font-semibold"
+              />
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+                <span className="text-xs font-medium text-slate-400 bg-slate-700/50 px-2 py-1 rounded-lg">
+                  SOL
+                </span>
+                <svg
+                  className="w-5 h-5 text-slate-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Send Button */}
+          <div className="pt-4">
+            <button
+              onClick={sendTokens}
+              className="group relative w-full py-4 px-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 text-white font-bold text-lg rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex items-center justify-center space-x-3">
+                <svg
+                  className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                  />
+                </svg>
+                <span>Send Solana</span>
+              </div>
+
+              {/* Button shine effect */}
+              <div className="absolute inset-0 -top-1 -bottom-1 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
+            </button>
+          </div>
+        </div>
+
+        {/* Security indicator */}
+        <div className="mt-6 pt-6 border-t border-slate-700/50">
+          <div className="flex items-center justify-center space-x-2 text-xs text-slate-400">
+            <svg
+              className="w-4 h-4 text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            <span>Secured by Solana Network</span>
+          </div>
+        </div>
       </div>
-      <div style={{ marginBottom: '16px' }}>
-        <input
-          id="amount"
-          type="text"
-          placeholder="Amount"
-          style={{
-            width: '100%',
-            padding: '12px 16px',
-            border: 'none',
-            borderRadius: '12px',
-            fontSize: '16px',
-            backgroundColor: 'rgba(255,255,255,0.15)',
-            color: 'white',
-            backdropFilter: 'blur(10px)',
-            outline: 'none',
-            boxSizing: 'border-box',
-          }}
-        />
-      </div>
-      <button
-        onClick={sendTokens}
-        style={{
-          backgroundColor: 'rgba(255,255,255,0.2)',
-          color: 'white',
-          border: 'none',
-          padding: '12px 24px',
-          borderRadius: '12px',
-          fontSize: '16px',
-          fontWeight: '600',
-          cursor: 'pointer',
-          backdropFilter: 'blur(10px)',
-          transition: 'all 0.3s ease',
-          width: '100%',
-        }}
-        onMouseOver={(e) => (e.target.style.backgroundColor = 'rgba(255,255,255,0.3)')}
-        onMouseOut={(e) => (e.target.style.backgroundColor = 'rgba(255,255,255,0.2)')}>
-        Send Solana
-      </button>
     </div>
   );
 }
-
 
 export default SendingSolana;
