@@ -24,33 +24,32 @@ function ShowSolanaBalance() {
       `,
           backgroundSize: '20px 20px, 20px 20px, 20px 20px',
           backgroundPosition: '0 0, 0 0, 0 0',
-          padding: '32px',
-          borderRadius: '20px',
+          borderRadius: '16px',
           boxShadow: '0 15px 50px rgba(0,0,0,0.15)',
-          marginBottom: '32px',
+          marginBottom: '24px',
           textAlign: 'center',
-        }}>
+        }}
+        className="p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
         <h2
           style={{
             color: 'white',
-            marginBottom: '24px',
-            fontSize: '24px',
             fontWeight: '700',
             marginTop: '0',
-          }}>
+          }}
+          className="mb-4 sm:mb-6 text-lg sm:text-xl lg:text-2xl">
           Wallet Balance
         </h2>
         <p
           style={{
             display: 'flex',
-            fontSize: '32px',
             color: 'white',
             fontWeight: '300',
             justifyContent: 'center',
             alignItems: 'center',
             margin: '0',
             letterSpacing: '1px',
-          }}>
+          }}
+          className="text-2xl sm:text-3xl lg:text-4xl">
           <div id="balance" style={{ marginLeft: '8px', fontWeight: '600' }}>
             0.00 SOL
           </div>
