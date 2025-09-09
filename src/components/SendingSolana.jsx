@@ -27,16 +27,16 @@ function SendingSolana() {
       {/* Glowing background effect */}
       {/* <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-400 rounded-3xl blur-xl opacity-75 animate-pulse"></div> */}
 
-      <div className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8 rounded-xl border border-purple-500/20 backdrop-blur-xl shadow-2xl">
+      <div className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 sm:p-6 lg:p-8 rounded-xl border border-purple-500/20 backdrop-blur-xl shadow-2xl">
         {/* Decorative elements */}
-        <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-lg"></div>
+        <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-12 h-12 sm:w-20 sm:h-20 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-lg"></div>
 
         {/* Header */}
-        <div className="relative mb-8 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl mb-4 shadow-lg">
+        <div className="relative mb-6 sm:mb-8 text-center">
+          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg">
             <svg
-              className="w-8 h-8 text-white"
+              className="w-6 h-6 sm:w-8 sm:h-8 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
@@ -48,30 +48,30 @@ function SendingSolana() {
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-2">
+          <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-2">
             Send Solana
           </h3>
-          <p className="text-slate-400 text-sm">Transfer SOL to any wallet address</p>
+          <p className="text-slate-400 text-xs sm:text-sm">Transfer SOL to any wallet address</p>
         </div>
 
         {/* Form Fields */}
-        <div className="space-y-6 relative">
+        <div className="space-y-4 sm:space-y-6 relative">
           {/* Recipient Address Field */}
           <div className="group">
-            <label className="block text-sm font-medium text-slate-300 mb-3">
+            <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3">
               Recipient Address
             </label>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-xl sm:rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <input
                 id="to"
                 type="text"
                 placeholder="Enter wallet address..."
-                className="relative w-full px-6 py-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl text-white placeholder-slate-400 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm font-mono text-sm"
+                className="relative w-full px-3 py-3 sm:px-6 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl sm:rounded-2xl text-white placeholder-slate-400 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm font-mono text-xs sm:text-sm pr-10 sm:pr-12"
               />
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+              <div className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2">
                 <svg
-                  className="w-5 h-5 text-slate-500"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -94,21 +94,23 @@ function SendingSolana() {
 
           {/* Amount Field */}
           <div className="group">
-            <label className="block text-sm font-medium text-slate-300 mb-3">Amount (SOL)</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3">
+              Amount (SOL)
+            </label>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-xl sm:rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <input
                 id="amount"
                 type="text"
                 placeholder="0.00"
-                className="relative w-full px-6 py-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl text-white placeholder-slate-400 focus:border-purple-400/50 focus:ring-2 focus:ring-purple-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm text-lg font-semibold"
+                className="relative w-full px-3 py-3 sm:px-6 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl sm:rounded-2xl text-white placeholder-slate-400 focus:border-purple-400/50 focus:ring-2 focus:ring-purple-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm text-base sm:text-lg font-semibold pr-16 sm:pr-20"
               />
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-                <span className="text-xs font-medium text-slate-400 bg-slate-700/50 px-2 py-1 rounded-lg">
+              <div className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-1 sm:space-x-2">
+                <span className="text-xs font-medium text-slate-400 bg-slate-700/50 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md sm:rounded-lg">
                   SOL
                 </span>
                 <svg
-                  className="w-5 h-5 text-slate-500"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-slate-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -124,14 +126,14 @@ function SendingSolana() {
           </div>
 
           {/* Send Button */}
-          <div className="pt-4">
+          <div className="pt-2 sm:pt-4">
             <button
               onClick={sendTokens}
-              className="group relative w-full py-4 px-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 text-white font-bold text-lg rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+              className="group relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 text-white font-bold text-base sm:text-lg rounded-xl sm:rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative flex items-center justify-center space-x-3">
+              <div className="relative flex items-center justify-center space-x-2 sm:space-x-3">
                 <svg
-                  className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
+                  className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -152,10 +154,10 @@ function SendingSolana() {
         </div>
 
         {/* Security indicator */}
-        <div className="mt-6 pt-6 border-t border-slate-700/50">
+        <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-700/50">
           <div className="flex items-center justify-center space-x-2 text-xs text-slate-400">
             <svg
-              className="w-4 h-4 text-green-400"
+              className="w-3 h-3 sm:w-4 sm:h-4 text-green-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
