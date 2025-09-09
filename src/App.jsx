@@ -21,31 +21,33 @@ function App() {
     <div
       style={{
         minHeight: '100vh',
-        padding: '40px 20px',
+        padding: '16px',
       }}>
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
             <div
               style={{
-                maxWidth: '80%',
+                maxWidth: '95%',
                 margin: '0 auto',
                 backgroundColor: 'rgba(255,255,255,0.1)',
-                borderRadius: '24px',
-                padding: '40px',
+                borderRadius: '16px',
+                padding: '20px',
                 backdropFilter: 'blur(20px)',
                 boxShadow: '0 25px 80px rgba(0,0,0,0.15)',
-              }}>
+              }}
+              className="sm:max-w-[90%] lg:max-w-[80%] sm:rounded-3xl sm:p-8 lg:p-10">
               <h1
                 style={{
                   textAlign: 'center',
                   color: 'white',
-                  fontSize: '36px',
+                  fontSize: '24px',
                   fontWeight: '700',
-                  marginBottom: '40px',
+                  marginBottom: '24px',
                   marginTop: '0',
                   letterSpacing: '1px',
-                }}>
+                }}
+                className="sm:text-3xl lg:text-4xl sm:mb-8 lg:mb-10">
                 Solana Wallet
               </h1>
 
@@ -53,46 +55,56 @@ function App() {
                 style={{
                   display: 'flex',
                   justifyContent: 'center',
-                  gap: '16px',
-                  marginBottom: '40px',
+                  gap: '12px',
+                  marginBottom: '24px',
                   flexWrap: 'wrap',
-                }}>
+                }}
+                className="sm:gap-4 sm:mb-8 lg:mb-10">
                 <WalletMultiButton
                   style={{
-                    // backgroundColor: 'rgba(255,255,255,0.2)',
-                    borderRadius: '12px',
+                    borderRadius: '8px',
                     border: 'none',
-                    padding: '12px 24px',
-                    fontSize: '16px',
+                    padding: '8px 16px',
+                    fontSize: '14px',
                     fontWeight: '600',
                     backdropFilter: 'blur(10px)',
                   }}
+                  className="sm:rounded-xl sm:px-6 sm:py-3 sm:text-base"
                 />
                 <WalletDisconnectButton
                   style={{
-                    // backgroundColor: 'rgba(255,255,255,0.2)',
-                    borderRadius: '12px',
+                    borderRadius: '8px',
                     border: 'none',
-                    padding: '12px 24px',
-                    fontSize: '16px',
+                    padding: '8px 16px',
+                    fontSize: '14px',
                     fontWeight: '600',
                     backdropFilter: 'blur(10px)',
                   }}
+                  className="sm:rounded-xl sm:px-6 sm:py-3 sm:text-base"
                 />
               </div>
 
-              <ShowSolanaBalance />
-              <RequestAirdrop />
+              <div className="mb-6 sm:mb-8">
+                <ShowSolanaBalance />
+              </div>
+
+              <div className="mb-6 sm:mb-8">
+                <RequestAirdrop />
+              </div>
 
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                  gap: '24px',
-                  marginTop: '40px',
-                }}>
-                <SignMessage />
-                <SendingSolana />
+                  gap: '16px',
+                  marginTop: '24px',
+                }}
+                className="grid-cols-1 lg:grid-cols-2 sm:gap-6 sm:mt-8 lg:mt-10">
+                <div className="w-full">
+                  <SignMessage />
+                </div>
+                <div className="w-full">
+                  <SendingSolana />
+                </div>
               </div>
             </div>
           </WalletModalProvider>
