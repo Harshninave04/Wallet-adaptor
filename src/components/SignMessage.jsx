@@ -25,13 +25,12 @@ function SignMessage() {
       {/* Animated background glow */}
       {/* <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-red-500 to-orange-500 rounded-3xl blur-xl opacity-60 animate-pulse"></div> */}
 
-      <div className="relative bg-black p-8 rounded-xl border border-pink-500/20 backdrop-blur-xl shadow-2xl">
-
+      <div className="relative bg-black p-4 sm:p-6 lg:p-8 rounded-xl border border-pink-500/20 backdrop-blur-xl shadow-2xl">
         {/* Header Section */}
-        <div className="relative mb-8 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl mb-4 shadow-lg transform hover:rotate-6 transition-transform duration-300">
+        <div className="relative mb-6 sm:mb-8 text-center">
+          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg transform hover:rotate-6 transition-transform duration-300">
             <svg
-              className="w-8 h-8 text-white"
+              className="w-6 h-6 sm:w-8 sm:h-8 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
@@ -43,32 +42,34 @@ function SignMessage() {
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-white via-pink-200 to-red-200 bg-clip-text text-transparent mb-2">
+          <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white via-pink-200 to-red-200 bg-clip-text text-transparent mb-2">
             Sign Message
           </h3>
-          <p className="text-slate-400 text-sm">Cryptographically sign any message</p>
+          <p className="text-slate-400 text-xs sm:text-sm">Cryptographically sign any message</p>
         </div>
 
         {/* Message Input Section */}
-        <div className="relative mb-8">
-          <label className="block text-sm font-medium text-slate-300 mb-4">Your Message</label>
+        <div className="relative mb-6 sm:mb-8">
+          <label className="block text-sm font-medium text-slate-300 mb-3 sm:mb-4">
+            Your Message
+          </label>
 
           <div className="group relative">
             {/* Hover glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-xl sm:rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             {/* Text area for message */}
             <textarea
               id="message"
               placeholder="Enter your message to sign..."
               rows="4"
-              className="relative w-full px-6 py-4 bg-slate-800/50 border border-slate-700/50 rounded-2xl text-white placeholder-slate-400 focus:border-pink-400/50 focus:ring-2 focus:ring-pink-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm resize-none"
+              className="relative w-full px-3 py-3 sm:px-6 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl sm:rounded-2xl text-white placeholder-slate-400 focus:border-pink-400/50 focus:ring-2 focus:ring-pink-400/20 focus:outline-none transition-all duration-300 backdrop-blur-sm resize-none text-sm sm:text-base"
             />
 
             {/* Character indicator */}
-            <div className="absolute bottom-3 right-4 flex items-center space-x-2">
+            <div className="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 flex items-center space-x-2">
               <svg
-                className="w-4 h-4 text-slate-500"
+                className="w-3 h-3 sm:w-4 sm:h-4 text-slate-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24">
@@ -83,9 +84,13 @@ function SignMessage() {
           </div>
 
           {/* Message info */}
-          <div className="mt-3 flex items-center justify-between text-xs text-slate-500">
-            <div className="flex items-center space-x-2">
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="mt-2 sm:mt-3 flex items-center justify-between text-xs text-slate-500">
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <svg
+                className="w-3 h-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -93,7 +98,7 @@ function SignMessage() {
                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <span>Message will be UTF-8 encoded</span>
+              <span className="text-xs">Message will be UTF-8 encoded</span>
             </div>
           </div>
         </div>
@@ -122,13 +127,13 @@ function SignMessage() {
         {/* Sign Button */}
         <button
           onClick={handleClick}
-          className="group relative w-full py-4 px-6 bg-gradient-to-r from-pink-600 via-red-600 to-orange-600 hover:from-pink-500 hover:via-red-500 hover:to-orange-500 text-white font-bold text-lg rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden mt-3">
+          className="group relative w-full py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-pink-600 via-red-600 to-orange-600 hover:from-pink-500 hover:via-red-500 hover:to-orange-500 text-white font-bold text-base sm:text-lg rounded-xl sm:rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300 overflow-hidden mt-2 sm:mt-3">
           {/* Button background animation */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-          <div className="relative flex items-center justify-center space-x-3">
+          <div className="relative flex items-center justify-center space-x-2 sm:space-x-3">
             <svg
-              className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+              className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
@@ -140,7 +145,7 @@ function SignMessage() {
               />
             </svg>
             <span>Sign Message</span>
-            <div className="w-5 h-5 border-2 border-white/30 border-t-white/70 rounded-full animate-spin opacity-0 group-active:opacity-100 transition-opacity duration-200"></div>
+            <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white/70 rounded-full animate-spin opacity-0 group-active:opacity-100 transition-opacity duration-200"></div>
           </div>
 
           {/* Shimmer effect */}
@@ -148,11 +153,11 @@ function SignMessage() {
         </button>
 
         {/* Security Footer */}
-        <div className="mt-6 pt-6 border-t border-slate-700/50">
-          <div className="grid grid-cols-2 gap-4 text-xs text-slate-400">
-            <div className="flex items-center space-x-2">
+        <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-700/50">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs text-slate-400">
+            <div className="flex items-center justify-center sm:justify-start space-x-2">
               <svg
-                className="w-4 h-4 text-green-400"
+                className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24">
@@ -165,9 +170,9 @@ function SignMessage() {
               </svg>
               <span>Verified Signature</span>
             </div>
-            <div className="flex items-center space-x-2 justify-end">
+            <div className="flex items-center justify-center sm:justify-end space-x-2">
               <svg
-                className="w-4 h-4 text-blue-400"
+                className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24">
